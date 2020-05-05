@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: config-client
+  rabbitmq:
+      host: localhost
+      port: 5672
+      username: yuanshuaif
+      password: Aa123456
+  cloud:
+    config:
+     # 配置文件的git分支
+      label: master
+      profile: dev
+#      uri: http://localhost:8081/
+      discovery:
+        #开启自动发现机制
+        enabled: true
+        serviceId: config-server
+server:
+    port: 8080
+eureka:
+    client:
+        serviceUrl:
+            defaultZone: http://yuanshuai:dk@localhost:8082/eureka/
